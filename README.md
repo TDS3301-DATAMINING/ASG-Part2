@@ -4,8 +4,6 @@ You can access the dataset at this [link](https://wiki.csc.calpoly.edu/datasets/
 
 ## A: Objectives
 
-Objectives: What is the domain and what are the potential benefits to be derived from association rule mining. This is high level - not find patterns, but what would improve because of the use of the patterns. 
-
 The domain of this data sets is about the large set of transactional data from a bakery chain which has a menu of about 40 pastry items and 10 coffee drinks. This bakery chain has a several locations in West Coast of United State which includes California, Oregon, Arizona and Nevada. In the dataset, there is a list of market baskets which contain what have been purchased by the customers. Hence, we can make use of this information to find the frequent patterns by applying association rule mining using Apriori algorithm. 
 
 There are many potential benefits can be derived from these association rules. This includes extracting the marketing information that can be used to improve business. For instance, the bakery shop would improve their product placement according to what is mostly purchased by the customers. This creates convenience for customers as they can reach their preferred items once they entered the shop or just grab the item without having to look and search for it. Besides that, the frequent items that have higher confidence in the basket can be combined together with lower confidence as a bundle to push the sales of the items that are not popular. 
