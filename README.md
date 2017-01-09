@@ -1,6 +1,6 @@
 # Part 2: ASSOCIATION RULE MINING
 
-You can access the dataset at [here](https://wiki.csc.calpoly.edu/datasets/wiki/ExtendedBakery).
+You can access the dataset at this [link](https://wiki.csc.calpoly.edu/datasets/wiki/ExtendedBakery).
 
 ## A: Objectives
 
