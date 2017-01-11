@@ -2,7 +2,7 @@
 
 You can access the dataset at this [link](https://wiki.csc.calpoly.edu/datasets/wiki/ExtendedBakery).
 
-## A: Objectives
+## Q1: Objectives
 
 The domain of this data sets is about the large set of transactional data from a bakery chain which has a menu of about 40 pastry items and 10 coffee drinks. This bakery chain has a several locations in West Coast of United State which includes California, Oregon, Arizona and Nevada. In the dataset, there is a list of shopping baskets which contain what have been purchased by the customers. Hence, we can make use of this information to find the patterns that occur frequently by applying association rule mining using Apriori algorithm. 
 
