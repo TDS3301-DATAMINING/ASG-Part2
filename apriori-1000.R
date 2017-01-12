@@ -20,17 +20,22 @@ product_names <- c("Chocolate_Cake", "Lemon_Cake",
 
 product_names <- as.character(product_names)
 df = read.csv(file="1000-out1.csv", header = FALSE, col.names = c("V1","V2","V3","V4","V5","V6","V7","V8","V9"))
-for(i in 2:ncol(df)){
+df$V1 <- NULL
+for(i in 1  :ncol(df)){
   df[,i] <- product_names[df[,i] + 1]
 }
 write.csv(df, "basket.csv")
 
 # Read data for 1000 records
-transaction = read.transactions(file="basket.csv", rm.duplicates=F, format = "basket", sep = ",", skip = 1)
+transaction = read.transactions(file="basket.csv", rm.duplicates=F, format = "basket", sep = ",", skip = 1, cols=1)
 inspect(transaction)
 
+# Start the clock!
+ptm <- proc.time()
 basket_rules <- apriori(transaction, parameter = list(sup = 0.005, conf = 0.8, target="rules"))
 inspect(basket_rules)
+# Stop the clock
+proc.time() - ptm
 
 # Round up to 3 digits
 quality(basket_rules)<-round(quality(basket_rules),digits=3)
