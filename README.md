@@ -95,6 +95,72 @@ user   system   elapsed
 
 ## 4. Resulting Rules
 
+Summary:  
+```R
+> summary(rules.pruned)
+
+set of 31 rules
+
+rule length distribution (lhs + rhs):sizes
+ 3  4  5 
+23  7  1 
+
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00    3.00    3.00    3.29    3.50    5.00 
+
+summary of quality measures:
+    support         confidence          lift      
+ Min.   :0.0210   Min.   :0.8900   Min.   :10.26  
+ 1st Qu.:0.0210   1st Qu.:0.9095   1st Qu.:12.45  
+ Median :0.0260   Median :0.9230   Median :13.43  
+ Mean   :0.0251   Mean   :0.9371   Mean   :13.21  
+ 3rd Qu.:0.0275   3rd Qu.:0.9740   3rd Qu.:13.68  
+ Max.   :0.0410   Max.   :1.0000   Max.   :14.78  
+
+mining info:
+        data ntransactions support confidence
+ transaction         75000   0.005        0.8
+
+```
+
+Rules:  
+```R
+>inspect(rules.pruned)
+
+     lhs                                                           rhs                  support confidence lift  
+[1]  {Green_Tea,Lemon_Cookie,Lemon_Lemonade,Raspberry_Lemonade} => {Raspberry_Cookie}   0.021   1.000      14.784
+[2]  {Apple_Danish,Apple_Tart,Cherry_Soda}                      => {Apple_Croissant}    0.021   0.993      14.755
+[3]  {Green_Tea,Lemon_Lemonade,Raspberry_Lemonade}              => {Raspberry_Cookie}   0.021   0.997      14.746
+[4]  {Lemon_Cookie,Lemon_Lemonade,Raspberry_Lemonade}           => {Raspberry_Cookie}   0.026   0.997      14.746
+[5]  {Green_Tea,Lemon_Cookie,Raspberry_Cookie}                  => {Raspberry_Lemonade} 0.021   0.998      14.732
+[6]  {Green_Tea,Lemon_Cookie,Lemon_Lemonade}                    => {Raspberry_Cookie}   0.021   0.994      14.699
+[7]  {Green_Tea,Lemon_Cookie,Lemon_Lemonade}                    => {Raspberry_Lemonade} 0.021   0.994      14.676
+[8]  {Lemon_Cookie,Lemon_Lemonade}                              => {Raspberry_Cookie}   0.026   0.926      13.693
+[9]  {Lemon_Lemonade,Raspberry_Lemonade}                        => {Raspberry_Cookie}   0.026   0.925      13.673
+[10] {Lemon_Cookie,Raspberry_Lemonade}                          => {Raspberry_Cookie}   0.026   0.923      13.644
+[11] {Apple_Danish,Apple_Tart}                                  => {Apple_Croissant}    0.026   0.916      13.608
+[12] {Lemon_Cookie,Lemon_Lemonade}                              => {Raspberry_Lemonade} 0.026   0.921      13.600
+[13] {Apple_Tart,Cherry_Soda}                                   => {Apple_Croissant}    0.021   0.912      13.547
+[14] {Green_Tea,Raspberry_Lemonade}                             => {Raspberry_Cookie}   0.021   0.910      13.451
+[15] {Apple_Tart,Cherry_Soda}                                   => {Apple_Danish}       0.021   0.910      13.441
+[16] {Green_Tea,Raspberry_Lemonade}                             => {Lemon_Cookie}       0.021   0.913      13.429
+[17] {Apple_Croissant,Cherry_Soda}                              => {Apple_Danish}       0.021   0.909      13.422
+[18] {Green_Tea,Lemon_Lemonade}                                 => {Raspberry_Cookie}   0.021   0.906      13.397
+[19] {Green_Tea,Lemon_Lemonade}                                 => {Raspberry_Lemonade} 0.021   0.903      13.334
+[20] {Green_Tea,Lemon_Lemonade}                                 => {Lemon_Cookie}       0.021   0.906      13.315
+[21] {Green_Tea,Lemon_Cookie}                                   => {Raspberry_Cookie}   0.021   0.900      13.307
+[22] {Almond_Twist,Coffee_Eclair,Hot_Coffee}                    => {Apple_Pie}          0.028   0.993      12.875
+[23] {Vanilla_Frappuccino,Walnut_Cookie}                        => {Chocolate_Tart}     0.027   0.940      12.746
+[24] {Coffee_Eclair,Single_Espresso}                            => {Blackberry_Tart}    0.027   0.922      12.156
+[25] {Almond_Twist,Coffee_Eclair}                               => {Apple_Pie}          0.034   0.925      11.989
+[26] {Almond_Twist,Hot_Coffee}                                  => {Apple_Pie}          0.028   0.907      11.765
+[27] {Coffee_Eclair,Hot_Coffee}                                 => {Apple_Pie}          0.028   0.890      11.542
+[28] {Coffee_Eclair,Hot_Coffee}                                 => {Almond_Twist}       0.028   0.891      11.541
+[29] {Casino_Cake,Chocolate_Coffee}                             => {Chocolate_Cake}     0.033   0.947      11.342
+[30] {Apricot_Croissant,Hot_Coffee}                             => {Blueberry_Tart}     0.033   0.928      11.188
+[31] {Apricot_Danish,Opera_Cake}                                => {Cherry_Tart}        0.041   0.955      10.255
+```
+
 In data mining, association rules mining is one of the popular process which is used to discover interesting relationship and pattern in given dataset. By using the Apriori algorithm, we are able to find out the three factors which is support, confidence, and lift from the given dataset. The support defined as the proportion of transactions in the data set which contain the item set. The confidence of a rule is defined as an estimate of the probability of finding the RHS of the rule in the transactions under the condition that these transactions also contain the LHS. The lift of rule is defined as the deviation of the support of the whole rule from the support expected under independence given the supports of the LHS and the RHS. The result of the mining algorithm is a set of 31 rules, we would like to round up the decimal place to 3 digits since it is able to save some time on showing the result. Furthermore, we are sorting the rules by lift as we know that the greater the lift values the stronger the association. The rule that have greater support, confidence and lift values show the strongest association. The final step is to remove the redundant rules so as to reduce the size of rule set to improve the quality and usefulness without any loss. From the rules we see that persons who are buying green tea, lemon cookie, lemon lemonade, and raspberry will tend to purchase raspberry cookie while person who are buying apricot danish and opera cake will have the less probability to purchase cherry tart. 
 
 I would suggest the large dataset to the client as large dataset will show the more accurate result. The client able to find the trend from the result and apply to the business marketing. An example of pattern discovery is the analysis of retail sales data to identify seemingly unrelated products that are often purchased together. 
