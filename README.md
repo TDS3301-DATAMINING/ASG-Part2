@@ -14,6 +14,12 @@ Furthermore, recommendation will also be more effective when we have the pattern
 
 In addition to that, we can determine what items would be affected if the shop discontinued a certain item. By having the patterns of different items as an antecedent and consequent we can know what is important in the store and make sure it is always served in the top quality so that it will not affect the sales. Therefore, the risk of losing customers will be reduced and the prevention will be improved. 
 
+## Q4: Resulting Rules
+
+In data mining, association rules mining is one of the popular process which is used to discover interesting relationship and pattern in given dataset. By using the Apriori algorithm, we are able to find out the three factors which is support, confidence, and lift from the given dataset. The support defined as the proportion of transactions in the data set which contain the item set. The confidence of a rule is defined as an estimate of the probability of finding the RHS of the rule in the transactions under the condition that these transactions also contain the LHS. The lift of rule is defined as the deviation of the support of the whole rule from the support expected under independence given the supports of the LHS and the RHS. The result of the mining algorithm is a set of 31 rules, we would like to round up the decimal place to 3 digits since it is able to save some time on showing the result. Furthermore, we are sorting the rules by lift as we know that the greater the lift values the stronger the association. The rule that have greater support, confidence and lift values show the strongest association. The final step is to remove the redundant rules so as to reduce the size of rule set to improve the quality and usefulness without any loss. From the rules we see that persons who are buying green tea, lemon cookie, lemon lemonade, and raspberry will tend to purchase raspberry cookie while person who are buying apricot danish and opera cake will have the less probability to purchase cherry tart. 
+
+I would suggest the large dataset to the client as large dataset will show the more accurate result. The client able to find the trend from the result and apply to the business marketing. An example of pattern discovery is the analysis of retail sales data to identify seemingly unrelated products that are often purchased together. 
+
 
 ## Q5: Recommendations
 
