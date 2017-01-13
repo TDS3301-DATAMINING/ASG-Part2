@@ -14,6 +14,42 @@ Furthermore, recommendation will also be more effective when we have the pattern
 
 In addition to that, we can determine what items would be affected if the shop discontinued a certain item. By having the patterns of different items as an antecedent and consequent we can know what is important in the store and make sure it is always served in the top quality so that it will not affect the sales. Therefore, the risk of losing customers will be reduced and the prevention will be improved. 
 
+## Q2: Data Set Description 
+For this extended bakery dataset, the source website provides dataset with different number of records which are 1000, 5000, 20000 and 750000. 
+
+Besides that, for each number of the dataset, the data was recorded in 2 different forms which are the sparse and the full binary form. 
+
+Example of sparse dataset (1000-out1.csv):
+```
+7, 4, 12, 31, 36, 44, 48
+```
+
+First digit is the row number then followed by the product number.
+
+
+Example of full binary dataset (1000-out2.csv):
+```
+8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+```
+
+For the binary form, the number of column represent each product, while 0 and 1 gives you an idea of what product is in the certain record.
+ 
+ 
+* **Preprocessing for the dataset**
+
+Before the actual data mining process begin, all the empty spaces that is found within the sparse form of the dataset is replaced with null value which is not available. Besides that, all the product number that is found within each record is then replaced with the item name so that the rules generated are easier to describe and understand.
+
+
+* **Decision to ignore**
+
+There was one of the dataset which the source website provided that contains the information of quantity of the product that customer purchased. That information was not used in the data mining process due to the reason that we are not interested in the quantity of the item they bought and it is not needed to found out the combination of product that customer will buy in. 
+
+## Q3: Parameter Settings
+
+* **Algorithm used**
+
+Apriori alogrithm for association mining is used to find out the relationship and the distinct combination of product that the customer bought during their visit to the bakery store. Furthermore, the confidence and support are set to 0.005 and 0.8.
+
 ## Q4: Resulting Rules
 
 In data mining, association rules mining is one of the popular process which is used to discover interesting relationship and pattern in given dataset. By using the Apriori algorithm, we are able to find out the three factors which is support, confidence, and lift from the given dataset. The support defined as the proportion of transactions in the data set which contain the item set. The confidence of a rule is defined as an estimate of the probability of finding the RHS of the rule in the transactions under the condition that these transactions also contain the LHS. The lift of rule is defined as the deviation of the support of the whole rule from the support expected under independence given the supports of the LHS and the RHS. The result of the mining algorithm is a set of 31 rules, we would like to round up the decimal place to 3 digits since it is able to save some time on showing the result. Furthermore, we are sorting the rules by lift as we know that the greater the lift values the stronger the association. The rule that have greater support, confidence and lift values show the strongest association. The final step is to remove the redundant rules so as to reduce the size of rule set to improve the quality and usefulness without any loss. From the rules we see that persons who are buying green tea, lemon cookie, lemon lemonade, and raspberry will tend to purchase raspberry cookie while person who are buying apricot danish and opera cake will have the less probability to purchase cherry tart. 
