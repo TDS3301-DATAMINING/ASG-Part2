@@ -14,7 +14,7 @@ There are many potential benefits can be derived from these association rules. T
 
 Other than that, we can group items with high correlations for catalog creation. This can attract more customer at the first sight as they can likely find whatever relevant items they were to buy in a short amount of time. Different promotion or discount coupon can also be integrated as part of the catalog for bundle discounts.
 
-Furthermore, recommendation will also be more effective when we have the patterns to do advertising on social platforms like Facebook or Twitter. For customers who have not tried certain items from the bakery shop would have attracted by seeing what other customers have bought together when they visit the shop. Reputation of different items would be improved as they are putting together.
+Furthermore, recommendation will also be more effective when we have the patterns to do advertising on social platforms like Facebook or Twitter. For customers who have not tried certain items from the bakery shop would have attracted by seeing what other customers have bought together when they visit the shop. Popularity of different items could be improved as they are putting together.
 
 In addition to that, we can determine what items would be affected if the shop discontinued a certain item. By having the patterns of different items as an antecedent and consequent we can know what is important in the store and make sure it is always served in the top quality so that it will not affect the sales. Therefore, the risk of losing customers will be reduced and the prevention will be improved.
 
