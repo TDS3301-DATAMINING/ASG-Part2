@@ -32,6 +32,7 @@ For this extended bakery dataset, the source website provides dataset with diffe
 | 2   | 1   | 19  |     |     |     |     |     |     |
 | 3   | 1   | 19  |     |     |     |     |     |     |
 | 4   | 3   | 4   | 15  | 18  | 35  | 44  |     |     |
+
 <sub>No. column represents the receipt's number.</sub>  
 <sub>Item columns represent the item number.</sub>
 </br>
